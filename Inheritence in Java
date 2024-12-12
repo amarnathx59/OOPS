@@ -1,0 +1,31 @@
+class Animal {
+    String species;
+
+    Animal(String species) {
+        this.species = species;
+    }
+
+    void makeSound() {
+        // To be overridden by subclasses
+    }
+}
+
+class Cat extends Animal {
+    String name;
+
+    Cat(String name) {
+        super("Cat");
+        this.name = name;
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " says meow!");
+    }
+
+    public static void main(String[] args) {
+        Cat myCat = new Cat("Whiskers");
+        myCat.makeSound();
+    }
+}
+
