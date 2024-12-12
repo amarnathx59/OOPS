@@ -1,0 +1,32 @@
+class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    BankAccount(String accountNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = 0;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("12345");
+        account.deposit(1000);
+        account.withdraw(500);
+        System.out.println("Remaining balance: " + account.getBalance());
+    }
+}
