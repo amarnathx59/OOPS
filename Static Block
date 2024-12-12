@@ -1,0 +1,30 @@
+class MyClass {
+    // Static variable
+    static int staticVariable;
+
+    // Static block
+    static {
+        staticVariable = 100;
+        System.out.println("Static block executed.");
+    }
+
+    // Constructor
+    MyClass() {
+        System.out.println("Constructor executed.");
+    }
+
+    // Static method
+    static void staticMethod() {
+        System.out.println("Static method executed. Static variable: " + staticVariable);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method executed.");
+
+        // Creating an instance of MyClass
+        MyClass obj = new MyClass();
+
+        // Calling static method
+        MyClass.staticMethod();
+    }
+}
